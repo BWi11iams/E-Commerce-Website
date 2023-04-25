@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EagleEyeComputers</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +14,13 @@
 
 
     <div class="header">
-
     <div class="container">
         <div class="navbar">
             <div class="logo">
                 <img src="images/logo.png" width="125px">
             </div>
             <nav>
-                <ul>
+                <ul id="MenuItems">
                     <li><a href="">Home</a></li>
                     <li><a href="">Products</a></li>
                     <li><a href="">About</a></li>
@@ -28,6 +28,7 @@
                 </ul>
             </nav>
             <img src="images/cart.png" width="30px" height="30px">
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
         <div class="row">
             <div class="col-2">
@@ -60,7 +61,7 @@
         </div>
        </div> 
     </div>
-<!----- Products ----->
+<!----- Featured Products ----->
     <div class="small-container">
         <h2 class="title">Featured Products</h2>
         <div class="row">
@@ -74,6 +75,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
+                <p2>Carbon Footprint: 120 kg CO2e, Ecological Footprint: 12 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£889.20</p>
             </div>
             <div class="col-4">
@@ -86,6 +90,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
+                <p2>Carbon Footprint: 125 kg CO2e, Ecological Footprint: 13 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£1,255.58</p>
             </div>
             <div class="col-4">
@@ -98,6 +105,9 @@
                     <i class="fa fa-star-half-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
+                <p2>Carbon Footprint: 15 kg CO2e, Ecological Footprint: 1.5 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£329.00</p>
             </div>
             <div class="col-4">
@@ -110,6 +120,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                 </div>
+                <p2>Carbon Footprint: 50 kg CO2e, Ecological Footprint: 5 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£3499</p>
             </div>
         </div>
@@ -130,6 +143,9 @@
                     <i class="fa fa-star-o"></i>
                     <i class="fa fa-star-o"></i>
                 </div>
+                <p2>Carbon Footprint: 25 kg CO2e, Ecological Footprint: 5 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£259.99</p>
             </div>
             <div class="col-4">
@@ -142,6 +158,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
+                <p2>Carbon Footprint: 17.5 kg CO2e, Ecological Footprint: 7 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£479.99</p>
             </div>
             <div class="col-4">
@@ -154,6 +173,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
+                <p2>Carbon Footprint: 17 kg CO2e, Ecological Footprint: 4 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£594.00</p>
             </div>
             <div class="col-4">
@@ -166,6 +188,9 @@
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star-half-o"></i>
                 </div>
+                <p2>Carbon Footprint: 25 kg CO2e, Ecological Footprint: 3 m2 of land use</p2>
+                <br>
+                <br>
                 <p>£569.00</p>
             </div>
         </div>
@@ -227,8 +252,26 @@
                     </ul>
                 </div>
             </div>
+            <hr>
+            <p class="copyright">Copyright 2023 - Brandon Williams</p>
         </div>
     </div>
+<!----- Js for Menu ----->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+    </script>
 
 </body>
 </html>
