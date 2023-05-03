@@ -31,15 +31,6 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-function purchaseClicked() {
-    alert('Thank you for your purchase')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    updateCartTotal()
-}
-
 function removeCartItem(event) {
     console.log('Button clicked');
     var buttonClicked = event.target;
@@ -72,11 +63,12 @@ function addToCartClicked(event) {
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var price = parseFloat(price.replace('£', '')).toFixed(2);
+    var quantity = shopItem.getElementsByClassName('shop-item-quantity')[0].value
     var imageSrc = document.getElementById('ProductImg').src;
-    addItemToCart(title, price, imageSrc)
+    addItemToCart(title, price, imageSrc, quantity)
 }
 
-function addItemToCart(title, price, imageSrc) {
+function addItemToCart(title, price, imageSrc, quantity) {
     var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     var itemExists = false;
     for (var i = 0; i < cartItems.length; i++) {
@@ -91,7 +83,7 @@ function addItemToCart(title, price, imageSrc) {
             title: title,
             price: price,
             imageSrc: imageSrc,
-            quantity: 1
+            quantity: quantity,
         });
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }
