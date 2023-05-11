@@ -27,8 +27,6 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
 function removeCartItem(event) {
@@ -130,7 +128,8 @@ function updateCartTotal() {
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '£' + total
-}
+    localStorage.setItem('cartTotal', total);
+  }
 
 function quantityChanged(event) {
     var input = event.target;

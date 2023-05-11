@@ -21,10 +21,10 @@
                 <ul id="MenuItems">
                     <li><a href="../homepage.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="account.html">Account</a></li>
                 </ul>
             </nav>
-            <a href="pages/cart.html">
+            <a href="cart.html">
                 <img src="../images/cart.png" width="30px" height="30px">
             </a>
             <img src="../images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -48,12 +48,14 @@
             <table>
                 <tr>
                     <td class="cart-total-title">Total</td>
-                    <td class="cart-total-price">£106.66</td>
+                    <td class="cart-total-price"></td>
                 </tr>
             </table>
         </div>
         <div class="btn-purchase">
-            <button class="btn btn-purchase">Checkout</button>
+            <a id="checkout-link" href="#">
+                <button class="btn btn-purchase">Checkout</button>
+            </a>
         </div>
     </div>
 <!----- Footer ----->
@@ -110,6 +112,17 @@
                     MenuItems.style.maxHeight = "0px";
                 }
         }
+    </script>
+<!----- Generate link for checkout ----->
+    <script>
+        // Get the cart total price from the HTML
+        const cartTotalPrice = document.querySelector(".cart-total-price").textContent;
+
+        // Generate the checkout link with the cart total price as a query parameter
+        const checkoutLink = `checkout.html?cart-total-price=${cartTotalPrice}`;
+
+        // Set the href attribute of the checkout link to the generated link
+        document.getElementById("checkout-link").href = checkoutLink;
     </script>
 
 </body>
